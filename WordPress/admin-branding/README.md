@@ -4,26 +4,25 @@ With this code you can add some branding things on **WordPress Admin**
 
 * **File:** `admin-branding.php`
 
-
 ## Result
 
 ### Admin Bar
+
 <a href="#">
 <img src="../../images/admin-bar-icon.png" alt="Admin Bar (After)" />
 </a>
 
-
 ### Admin Footer
+
 <a href="#">
 <img src="../../images/footer-after.png" alt="Admin Footer (After)" />
 </a>
 
 #### Before Changes
+
 <a href="#">
 <img src="../../images/footer-before.png" alt="Admin Footer (Before)" />
 </a>
-
-
 
 ## How to use
 
