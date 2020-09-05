@@ -43,7 +43,6 @@ add_filter(
 );
 
 // Remove WP Version
-
 add_filter('update_footer', function () {
 	return '<strong>Copyright© 2020</strong>';
 }, 9999);
