@@ -3,6 +3,7 @@
 /**
  * Change Logo and Background on WordPress Login
  */
+// 1) With inline CSS
 add_action('login_enqueue_scripts', function () {
 ?>
 	<style>
@@ -22,6 +23,9 @@ add_action('login_enqueue_scripts', function () {
 	</style>
 <?php
 });
+
+// 2) With Separated CSS
+wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/login-style.css');
 
 /**
  * Change Logo URL
