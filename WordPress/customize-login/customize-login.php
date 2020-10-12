@@ -15,7 +15,7 @@ add_action('login_enqueue_scripts', function () {
 		}
 
 		body {
-			background: url("/wp-content/uploads/path/background.jpg") !important;
+			background-image: url("/wp-content/uploads/path/background.jpg") !important;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
