@@ -8,5 +8,5 @@
 With this code you can have a input file like below image:
 
 <a href="#">
-	<img src="../../../images/footer-after.png" alt="Custom File Input" />
+	<img src="../../../images/custom-file-input.png" alt="Custom File Input" />
 </a>
