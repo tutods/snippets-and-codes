@@ -5,25 +5,29 @@
 export class MyComponent implements OnInit {
 	
 	/**
-	* Other methods of your component (like constructor, OnInit, ...)
-	*/
+	 * Other methods of your component (like constructor, OnInit, ...)
+	 */
+	
+ 	/**
+     * Element where show file name after choose
+	 * Alternative to use document.getElementById('legend')
+     */
+    @ViewChild('legend') FileLegend: ElementRef;
 	
 	/**
-	* Method to run when have changes on input
-	*/	
+	 * Method to run when have changes on input
+	 */	
 	showFileName(): void {
-        const legend = document.getElementById('legend') as HTMLInputElement;
-        const input = document.getElementById('file') as HTMLInputElement;
+		const file = (event.target as HTMLInputElement).files[0];
 
-        let fileName = input.value;
-        fileName = fileName.split('\\').slice(-1).pop();
+		let fileName = file.name.split('\\').slice(-1).pop();
 
-        //  Add ... if name have more than 15 chars
-        if (fileName.length >= 15) {
-            const extension = fileName.split('.').slice(-1).pop();
-            fileName = `${fileName.substr(0, 15)}(...).${extension}`;
-        }
-
-        legend.innerHTML = `<strong>Ficheiro selecionado:</strong> "${fileName}"`;
+		//  Add ... if name have more than 15 chars
+		if (fileName.length > 15) {
+			const extension = fileName.split('.').slice(-1).pop();
+			fileName = `${fileName.substr(0, 15)}(...).${extension}`;
+		}
+		
+		this.FileLegend.nativeElement.innerHTML = `<strong>Ficheiro selecionado:</strong> "${fileName}"`;
 	}
 }
