@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Fix Permissions <small>(using SSH)</small>
 
 > **SOURCE:** [Adirael](https://gist.github.com/Adirael/3383404)

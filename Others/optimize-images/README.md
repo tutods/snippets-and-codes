@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # How to Optimize Images
 
 I use this guide to optimize images before upload to my **WordPress** projects.

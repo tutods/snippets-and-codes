@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Custom File Upload
 
 **Original Custom File Upload:** [Bootstrap Page](https://getbootstrap.com/docs/4.0/components/forms/#file-browser)

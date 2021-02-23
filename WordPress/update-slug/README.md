@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Update **POST** and **PAGES** slug
 
 * **File:** `update-slug.php`

@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Duplicate **Pages** and **Posts** without plugin
 
 * **File:** `duplicate-button.php`

@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Snippets & Codes
 
 > **Note:** this repo contains snippets and codes I find on Internet to help me on some jobs, like custom branding on WordPress or custom upload file on Bootstrap

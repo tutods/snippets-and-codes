@@ -1,3 +1,5 @@
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
+
 # Admin Branding
 
 With this code you can add some branding things on **WordPress Admin**
