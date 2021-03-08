@@ -1,8 +1,14 @@
+<div style="margin-bottom: 50px">
+<a href="https://github.com/TutoDS">
+<img src="./../../images/logo.png" alt="Daniel Sousa" width="150px">
+</a>
+</div>
+
 # Admin Branding
 
 With this code you can add some branding things on **WordPress Admin**
 
-* **File:** `admin-branding.php`
+-   **File:** `admin-branding.php`
 
 ## Result
 
@@ -31,4 +37,4 @@ You can use this code two ways :
 1. Using **[Code Snippets](https://pt.wordpress.org/plugins/code-snippets/)** plugin
 2. Add on `functions.php` file (theme folder)
 
-   * Recommend use **child theme** to add modifications.
+    - Recommend use **child theme** to add modifications.

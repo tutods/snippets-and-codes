@@ -1,3 +1,9 @@
+<div style="margin-bottom: 50px">
+<a href="https://github.com/TutoDS">
+<img src="./../../images/logo.png" alt="Daniel Sousa" width="150px">
+</a>
+</div>
+
 # Add code on `<header>` and `<footer>`
 
 + **File:** `add-header-footer-code.php`

@@ -4,15 +4,20 @@
 </a>
 </div>
 
+# Enable **Gutenberg** Editor to Woocommerce Products
 
-# Duplicate **Pages** and **Posts** without plugin
-
-* **File:** `duplicate-button.php`
+* **File:** `enable-gutenberg-to-products.php`
 
 ## Result
 
 <a href="#">
-<img src="../../images/duplicate-button.png" alt="Duplicate Button" />
+<img src="../../images/product.png" alt="Product with Gutenberg" width="700px" />
+</a>
+
+<br />
+
+<a href="#">
+<img src="../../images/product-categories.png" alt="Product Categories with Gutenberg" width="200px" />
 </a>
 
 ## How to use
