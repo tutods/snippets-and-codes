@@ -1,8 +1,5 @@
-<div style="margin-bottom: 50px">
-<a href="https://github.com/TutoDS">
-<img src="./../../images/logo.png" alt="Daniel Sousa" width="150px">
-</a>
-</div>
+
+<a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
 
 # Add code on `<header>` and `<footer>`
 
