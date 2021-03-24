@@ -1,6 +1,13 @@
 num=1
 limit=$1
 
+if [ ! $limit ];
+then
+((limit=1))
+fi
+
+echo $limit
+
 # Add number of spaces you want
 while [ $num -le $limit ]
 do
