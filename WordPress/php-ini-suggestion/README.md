@@ -2,7 +2,7 @@
 
 # Best `php.ini` I used for WordPress
 
--   **File:** `php.omo`
+-   **File:** `php.ini`
 
 ## How to use
 
