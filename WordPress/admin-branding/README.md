@@ -8,12 +8,6 @@ With this code you can add some branding things on **WordPress Admin**
 
 ## Result
 
-### Admin Bar
-
-<a href="#">
-<img src="../../images/admin-bar-icon.png" alt="Admin Bar (After)" />
-</a>
-
 ### Admin Footer
 
 <a href="#">
