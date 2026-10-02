@@ -2,9 +2,27 @@
 
 # Admin Branding
 
-With this code you can add some branding things on **WordPress Admin**
+Makes the WordPress admin feel built for the client: a personal greeting, quick links, the site's own icon and your credit in the footer.
 
 -   **File:** `admin-branding.php`
+
+## What it does
+
+* **Admin bar:** removes the WordPress logo and uses the site icon next to the site name, in the admin and on the front end. "Howdy, Name" becomes a time-based greeting: "Bom dia, Rodney" before 13h, "Boa tarde" until 20h, then "Boa noite".
+* **Dashboard welcome banner:** a greeting plus shortcut buttons at the top of the dashboard: Novo produto, Encomendas and Clientes when WooCommerce is active (HPOS aware), then Novo artigo and Ver site, and a support link if an email is set. Each button only shows when the user has the matching permission.
+* **Dashboard cleanup:** hides WordPress News, Quick Draft and the default Welcome panel. Site Health stays for admins only.
+* **Footer:** "Site desenvolvido por <you>" on the left, plus a support link if an email is set. The right side shows the site name and current year, and admins also see the WordPress version.
+
+## Settings
+
+Edit the array in `tds_admin_branding_settings()`:
+
+| Key | What it is |
+|---|---|
+| `developer` / `developer_url` | Your name and link in the footer |
+| `support_email` | Empty hides the support links |
+| `greetings` | Morning, afternoon and evening words |
+| `texts` | Every visible label, so it can be translated |
 
 ## Result
 
@@ -22,9 +40,10 @@ With this code you can add some branding things on **WordPress Admin**
 
 ## How to use
 
-You can use this code two ways :
+You can use this code in three ways:
 
-1. Using **[Code Snippets](https://pt.wordpress.org/plugins/code-snippets/)** plugin
-2. Add on `functions.php` file (theme folder)
+1. Using **[WPCode](https://wordpress.org/plugins/insert-headers-and-footers/)** or **[Code Snippets](https://wordpress.org/plugins/code-snippets/)**, as a PHP snippet that runs everywhere
+2. Add it to `functions.php` in your theme folder
 
-    - Recommend use **child theme** to add modifications.
+    - Use a **child theme**, so theme updates don't remove it.
+3. Combine it with [`customize-login`](../customize-login/) for a fully branded panel.
