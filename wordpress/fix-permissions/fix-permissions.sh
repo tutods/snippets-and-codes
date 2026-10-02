@@ -1,18 +1,25 @@
-WP_OWNER=$2 # <-- wordpress owner
-WP_GROUP=$2 # <-- wordpress group
-WP_ROOT=$1 # <-- wordpress root directory
-WS_GROUP=$2 # <-- webserver group
+#!/usr/bin/env bash
+set -euo pipefail
 
-# reset to safe defaults
-find ${WP_ROOT} -exec chown ${WP_OWNER}:${WP_GROUP} {} \;
-find ${WP_ROOT} -type d -exec chmod 755 {} \;
-find ${WP_ROOT} -type f -exec chmod 644 {} \;
+if [ "$#" -lt 2 ]; then
+	echo "Usage: $0 <wp-root> <owner> [group] [webserver-group]" >&2
+	exit 1
+fi
 
-# allow wordpress to manage wp-config.php (but prevent world access)
-chgrp ${WS_GROUP} ${WP_ROOT}/wp-config.php
-chmod 660 ${WP_ROOT}/wp-config.php
+WP_ROOT=$1
+WP_OWNER=$2
+WP_GROUP=${3:-$2}
+WS_GROUP=${4:-$WP_GROUP}
 
-# allow wordpress to manage wp-content
-find ${WP_ROOT}/wp-content -exec chgrp ${WS_GROUP} {} \;
-find ${WP_ROOT}/wp-content -type d -exec chmod 775 {} \;
-find ${WP_ROOT}/wp-content -type f -exec chmod 664 {} \;
+chown -R "$WP_OWNER:$WP_GROUP" "$WP_ROOT"
+find "$WP_ROOT" -type d -exec chmod 755 {} +
+find "$WP_ROOT" -type f -exec chmod 644 {} +
+
+if [ -f "$WP_ROOT/wp-config.php" ]; then
+	chgrp "$WS_GROUP" "$WP_ROOT/wp-config.php"
+	chmod 640 "$WP_ROOT/wp-config.php"
+fi
+
+chgrp -R "$WS_GROUP" "$WP_ROOT/wp-content"
+find "$WP_ROOT/wp-content" -type d -exec chmod 775 {} +
+find "$WP_ROOT/wp-content" -type f -exec chmod 664 {} +

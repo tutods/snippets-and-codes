@@ -9,15 +9,8 @@
 ## How to use
 
 1. Create this file on you server (not in WordPress installation folder)
-2. Run using: `sh fix-permissions.sh <folder> <user:group>`
+2. Run using: `sudo bash fix-permissions.sh <folder> <owner> [group] [webserver-group]`
    * `<folder>`: is your WordPress folder installation (like `public_html`, etc.)
-   * `<user:group>`: is your user and group
-     * **Note:** I use same user and group, if your group is different of user change this lines:
-
-		```bash
-		WP_OWNER=$2 # <-- wordpress owner
-		WP_GROUP=$3 # <-- wordpress group
-		WP_ROOT=$1 # <-- wordpress root directory
-		WS_GROUP=$3 # <-- webserver group
-		```
-		This way you running using: `sh fix-permissions.sh <folder> <user> <group>`
+   * `<owner>`: user that owns the files
+   * `[group]`: group of the files, defaults to `<owner>`
+   * `[webserver-group]`: group the web server runs as (like `www-data`), defaults to `[group]`. It gets write access to `wp-content` and read-only access to `wp-config.php` (640), so a compromised plugin can't rewrite your database credentials. If a plugin needs to edit `wp-config.php` (some caching or security plugins do), run `chmod 660 wp-config.php`, let it make the change, then set it back to 640.
