@@ -1,24 +1,14 @@
 <?php
 
-function sanitizeFileName( $filename ) {
+add_filter('sanitize_file_name', function ($filename) {
+	$filename = strtolower(remove_accents($filename));
+	$filename = str_replace([' ', '%20', '_'], '-', $filename);
+	$filename = preg_replace('/[^a-z0-9.-]/', '', $filename);
+	// Keep only the last dot so the extension survives.
+	$filename = preg_replace('/\.(?=.*\.)/', '', $filename);
+	$filename = trim(preg_replace('/-+/', '-', $filename), '-');
+	$filename = str_replace('-.', '.', $filename);
 
-    $sanitized_filename = remove_accents( $filename ); // Convert to ASCII
-
-    // Standard replacements
-    $invalid = array(
-        ' '   => '-',
-        '%20' => '-',
-        '_'   => '-',
-    );
-    $sanitized_filename = str_replace( array_keys( $invalid ), array_values( $invalid ), $sanitized_filename );
-
-    $sanitized_filename = preg_replace('/[^A-Za-z0-9-\. ]/', '', $sanitized_filename); // Remove all non-alphanumeric except .
-    $sanitized_filename = preg_replace('/\.(?=.*\.)/', '', $sanitized_filename); // Remove all but last .
-    $sanitized_filename = preg_replace('/-+/', '-', $sanitized_filename); // Replace any more than one - in a row
-    $sanitized_filename = str_replace('-.', '.', $sanitized_filename); // Remove last - if at the end
-    $sanitized_filename = strtolower( $sanitized_filename ); // Lowercase
-
-    return $sanitized_filename;
-}
-
-add_filter( 'sanitize_file_name', 'sanitizeFileName', 10, 1 );
+	// A name made only of stripped characters would leave ".jpg", a hidden file.
+	return ('' === $filename || str_starts_with($filename, '.')) ? 'file' . $filename : $filename;
+});

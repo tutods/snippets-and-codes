@@ -1,13 +1,13 @@
 
 <a href="https://github.com/TutoDS"><img src="../../images/daniel-sousa.png" alt="Daniel Sousa" width="100px" /></a>
 
-# Add code on `<header>` and `<footer>`
+# Add code on `<head>` and footer
 
 + **File:** `add-header-footer-code.php`
 
-On this file you can find code to insert scripts, and other things on `<header>` and `<footer>` tags of your WordPress installation.
+On this file you can find code to insert scripts, and other things, inside the `<head>` tag (`wp_head`) and right before `</body>` (`wp_footer`) of your WordPress installation.
 
-> **Example:** Google Analytics code is necessary add on `<header>` tag
+> **Example:** Google Analytics code is necessary add on `<head>` tag
 
 ## How to use
 

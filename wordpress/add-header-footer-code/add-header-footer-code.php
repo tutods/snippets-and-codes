@@ -1,25 +1,13 @@
 <?php
-// ADD THIS CODE ON functions.php OR USE CODE SNIPPETS PLUGIN
-/**
- * Add Code on Header
- */
-add_action('wp_head', 'headCode');
 
-function headCode()
-{
-?>
+add_action('wp_head', function () {
+	?>
 	<!-- Header Code -->
-<?php
-};
+	<?php
+});
 
-/**
- * Add Code on Footer
- */
-// Footer Code
-add_action('wp_footer', 'footerCode');
-function footerCode()
-{
-?>
+add_action('wp_footer', function () {
+	?>
 	<!-- Footer Code -->
-<?php
-};
+	<?php
+});

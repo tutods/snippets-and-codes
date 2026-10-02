@@ -1,21 +1,13 @@
 <?php
 
-// Enable Gutenberg to Products
-function wplook_activate_gutenberg_products($can_edit, $post_type)
-{
-    if ($post_type == 'product') {
-        $can_edit = true;
-    }
+add_filter('use_block_editor_for_post_type', function ($can_edit, $post_type) {
+	return 'product' === $post_type ? true : $can_edit;
+}, 10, 2);
 
-    return $can_edit;
-}
-add_filter('use_block_editor_for_post_type', 'wplook_activate_gutenberg_products', 10, 2);
+$tds_taxonomy_show_in_rest = function ($args) {
+	$args['show_in_rest'] = true;
+	return $args;
+};
 
-// Enable Product Cateogires and Tags in Gutenberg
-function enable_taxonomy_rest($args)
-{
-    $args['show_in_rest'] = true;
-    return $args;
-}
-add_filter('woocommerce_taxonomy_args_product_cat', 'enable_taxonomy_rest');
-add_filter('woocommerce_taxonomy_args_product_tag', 'enable_taxonomy_rest');
+add_filter('woocommerce_taxonomy_args_product_cat', $tds_taxonomy_show_in_rest);
+add_filter('woocommerce_taxonomy_args_product_tag', $tds_taxonomy_show_in_rest);

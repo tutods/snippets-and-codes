@@ -3,9 +3,11 @@
 
 # Remove Downloads from "My Account" - WooCommerce
 
+> **Native alternative:** WooCommerce > Settings > Advanced > Page setup > Account endpoints. Leave the "Downloads" endpoint empty and the tab disappears, no code needed.
+
 + **File:** `remove-downloads.php`
 
-On this file you can find a snippet to remove the comments on the WordPress blog.
+On this file you can find a snippet to remove the "Downloads" tab from the WooCommerce "My Account" page.
 
 ## How to use
 
