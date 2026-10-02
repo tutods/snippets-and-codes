@@ -10,6 +10,10 @@ Makes the WordPress admin feel built for the client: a personal greeting, quick 
 
 * **Admin bar:** removes the WordPress logo and uses the site icon next to the site name, in the admin and on the front end. "Howdy, Name" becomes a time-based greeting: "Bom dia, Rodney" before 13h, "Boa tarde" until 20h, then "Boa noite".
 * **Dashboard welcome banner:** a greeting plus shortcut buttons at the top of the dashboard: Novo produto, Encomendas and Clientes when WooCommerce is active (HPOS aware), then Novo artigo and Ver site, and a support link if an email is set. Each button only shows when the user has the matching permission.
+* **Shop summary in the banner (WooCommerce):** four cards, each linking to the matching list or report: orders today, sales this month, orders waiting to be processed (highlighted when there are any) and low-stock products (amber when there are any). The numbers are cached for 10 minutes, and the cache clears when an order or stock changes.
+* **Brand colours:** teal active and hovered menu items, primary and secondary buttons, links and input focus. Set `primary` to an empty string to keep the WordPress colours.
+* **Dashboard widgets:** rounded card style, the same as the banner.
+* **Simpler panel for non-admins** (users without `manage_options`): the widgets in `hide_widgets` and the menus in `hide_menus` are hidden. Admins always see everything.
 * **Dashboard cleanup:** hides WordPress News, Quick Draft and the default Welcome panel. Site Health stays for admins only.
 * **Footer:** "Site desenvolvido por <you>" on the left, plus a support link if an email is set. The right side shows the site name and current year, and admins also see the WordPress version.
 
