@@ -3,6 +3,8 @@
 
 # Remove Comments (on Blog) from WordPress
 
+> **Native alternative:** Settings > Discussion > "Allow people to submit comments on new posts" only affects new posts; existing ones need Bulk Edit. Neither hides the admin menu, dashboard widget or admin bar item, which this snippet does.
+
 + **File:** `remove-comments.php`
 
 On this file you can find a snippet to remove the comments on the WordPress blog.
