@@ -6,6 +6,12 @@
 
 With this code, when you change title of your **page/post**, slug is update to that new title.
 
+-   Title contains `+`: slug ends with `-plus`
+-   Title contains `#`: slug ends with `-sharp`
+-   Slugs stay unique (`-2`, `-3`, ...), and a slug typed by hand is overwritten on the next save.
+
+> **Warning:** on published content this changes the URL. WordPress redirects old post slugs, but not old page slugs, so add a redirect when renaming a published page.
+
 ## How to use
 
 You can use this code two ways :
