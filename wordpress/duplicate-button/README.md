@@ -2,6 +2,10 @@
 
 # Duplicate **Pages** and **Posts** without plugin
 
+> **Native alternative:** WordPress core has no duplicate action. WooCommerce already adds "Duplicate" to products, so this snippet is only needed for posts, pages and other post types.
+
+The copy is saved as a draft owned by the current user, with its terms and custom fields. Only users who can edit the original and create items of that post type see the link.
+
 * **File:** `duplicate-button.php`
 
 ## Result
