@@ -219,13 +219,40 @@ add_action( 'admin_head', function () {
 		.tds-welcome-links a:hover { border-color: <?php echo esc_attr( $primary ); ?>; color: <?php echo esc_attr( $dark ); ?>; }
 		@media (max-width: 782px) { .tds-welcome-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; } }
 
-		#dashboard-widgets .postbox { border: 1px solid #dcdcde; border-radius: 12px; overflow: hidden; box-shadow: none; }
-		#dashboard-widgets .postbox-header { border-bottom: 1px solid #f0f0f1; }
-		#dashboard-widgets .postbox-header .hndle { font-size: 14px; font-weight: 600; padding: 12px 16px; }
-		#dashboard-widgets .postbox .inside { padding: 4px 16px 16px; }
-		#dashboard-widgets .postbox .inside > :first-child { margin-top: 12px; }
+		#dashboard-widgets .postbox { border: 1px solid #e5e9ec; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 10px 24px -18px rgba(15, 120, 150, .35); transition: box-shadow .15s; }
+		#dashboard-widgets .postbox:hover { box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 14px 30px -16px rgba(15, 120, 150, .45); }
+		#dashboard-widgets .postbox-header { border-bottom: 1px solid #eef1f3; background: linear-gradient(180deg, #f7fbfc, #fff); }
+		#dashboard-widgets .postbox-header .hndle { gap: 10px; justify-content: flex-start; font-size: 14px; font-weight: 600; padding: 14px 18px; color: #0b2530; }
+		#dashboard-widgets .postbox-header .hndle::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: <?php echo esc_attr( $primary ); ?>; box-shadow: 0 0 0 4px rgba(46, 184, 220, .18); }
+		#dashboard-widgets .postbox .handle-actions button { color: #a7aaad; }
+		#dashboard-widgets .postbox .handle-actions button:hover .dashicons, #dashboard-widgets .postbox .handle-actions button:hover { color: <?php echo esc_attr( $dark ); ?>; }
+		#dashboard-widgets .postbox .inside { padding: 4px 18px 18px; }
+		#dashboard-widgets .postbox .inside > :first-child { margin-top: 14px; }
 		#dashboard-widgets-wrap .meta-box-sortables { gap: 0; }
-		#dashboard-widgets .woocommerce_dashboard_status ul.wc_status_list li { border-color: #f0f0f1; }
+
+		#dashboard-widgets ul.wc_status_list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 14px 0 0; border: 0; }
+		#dashboard-widgets ul.wc_status_list li { float: none; width: auto; margin: 0; border: 0 !important; border-radius: 10px; background: #f6f8f9; }
+		#dashboard-widgets ul.wc_status_list li:hover { background: #eef7fa; }
+		#dashboard-widgets ul.wc_status_list li.sales-this-month, #dashboard-widgets ul.wc_status_list li.best-seller-this-month { grid-column: 1 / -1; }
+		#dashboard-widgets ul.wc_status_list li a { padding: 12px 14px 12px 52px; }
+		#dashboard-widgets ul.wc_status_list li a::before { left: 18px; }
+		#dashboard-widgets ul.wc_status_list li a::before { color: <?php echo esc_attr( $dark ); ?>; }
+		#dashboard-widgets ul.wc_status_list li.low-in-stock { background: #fff8e8; }
+		#dashboard-widgets ul.wc_status_list li.low-in-stock a::before { color: #b26200; }
+		#dashboard-widgets ul.wc_status_list li.out-of-stock a::before { color: #b32d2e; }
+		#dashboard-widgets ul.wc_status_list li a strong { font-size: 18px; }
+
+		#dashboard_right_now .main ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; }
+		#dashboard_right_now .main ul li { float: none; width: auto; margin: 0; padding: 10px 12px; border-radius: 10px; background: #f6f8f9; }
+		#dashboard_right_now li a::before, #dashboard_right_now li > span::before { color: <?php echo esc_attr( $dark ); ?>; }
+		#dashboard_right_now .sub { border-top: 1px solid #eef1f3; background: none; }
+
+		#activity-widget #published-posts li, #activity-widget #future-posts li { padding: 8px 0; margin: 0; border-bottom: 1px solid #eef1f3; }
+		#activity-widget li:last-child { border-bottom: 0; }
+		#activity-widget h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #646970; }
+		#woocommerce_dashboard_recent_reviews li { padding: 10px 0; margin: 0; border-bottom: 1px solid #eef1f3; }
+		#woocommerce_dashboard_recent_reviews li:last-child { border-bottom: 0; }
+		#woocommerce_dashboard_recent_reviews li img.avatar { border-radius: 50%; }
 
 		<?php if ( $s['primary'] ) : ?>
 		#adminmenu li.menu-top:hover > a, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus { background: <?php echo esc_attr( $dark ); ?>; color: #fff; }
