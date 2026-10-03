@@ -5,10 +5,10 @@ function tds_login_settings() {
 		'logo'             => '', // Image URL. Empty uses the site logo, then the site icon.
 		'logo_width'       => 240,
 		'logo_height'      => 120,
-		'primary'          => '#2eb8dc',
-		'primary_dark'     => '#0f7896',
+		'primary'          => '#2271b1',
+		'primary_dark'     => '#135e96',
 		'text'             => '#1d2327',
-		'background'       => '#f3f7f9',
+		'background'       => '#f0f0f1',
 		'background_image' => '', // Optional image URL, covers the whole page.
 	);
 }

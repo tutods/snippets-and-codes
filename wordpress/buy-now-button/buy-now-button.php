@@ -4,7 +4,7 @@ function tds_buy_now_settings() {
 	return array(
 		'label'            => 'Comprar agora',
 		'background'       => '#1d2327',
-		'hover_background' => '#0f7896',
+		'hover_background' => '#135e96',
 		'color'            => '#fff',
 	);
 }

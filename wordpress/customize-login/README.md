@@ -21,9 +21,9 @@ Edit the array in `tds_login_settings()`:
 |---|---|---|
 | `logo` | `''` | Logo URL. Empty uses the site logo, then the site icon |
 | `logo_width` / `logo_height` | `220` / `80` | Logo box in px (the image keeps its proportions) |
-| `primary` / `primary_dark` | `#2eb8dc` / `#0f7896` | Button, focus and link colours |
+| `primary` / `primary_dark` | `#2271b1` / `#135e96` | Button, focus and link colours |
 | `text` | `#1d2327` | Labels |
-| `background` | `#f3f7f9` | Page background colour |
+| `background` | `#f0f0f1` | Page background colour |
 | `background_image` | `''` | Optional full-page background image URL |
 
 ## Result

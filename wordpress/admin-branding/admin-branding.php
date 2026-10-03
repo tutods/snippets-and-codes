@@ -27,8 +27,8 @@ function tds_admin_branding_settings() {
 			'low_stock'   => 'Stock baixo',
 		),
 		// Empty strings switch the brand colours off.
-		'primary'       => '#2eb8dc',
-		'primary_dark'  => '#0f7896',
+		'primary'       => '#2271b1',
+		'primary_dark'  => '#135e96',
 		// Hidden for users without manage_options (shop managers, editors).
 		'hide_widgets'  => array( 'google_dashboard_widget', 'commercekit_stats_widget', 'e-dashboard-overview', 'dashboard_site_health', 'wps_limit_logindashboard_widget' ),
 		'hide_menus'    => array( 'googlesitekit-dashboard', 'elementor-home', 'elementor', 'edit.php?post_type=elementor_library', 'complianz', 'tools.php', 'advanced_db_cleaner', 'wpcode', 'seopress-option', 'commercekit', 'really-simple-security', 'litespeed' ),
@@ -206,11 +206,11 @@ add_action( 'admin_head', function () {
 		.tds-welcome p { margin: 0; font-size: 14px; color: #50575e; }
 		.tds-welcome-stats { display: grid; grid-template-columns: repeat(4, minmax(140px, 1fr)); gap: 10px; }
 		#wpbody-content .tds-welcome-stats a { display: flex; flex-direction: column; gap: 6px; padding: 12px 16px; border: 1px solid #e5e9ec; border-radius: 12px; background: #fff; color: #1d2327; text-decoration: none !important; transition: border-color .15s, box-shadow .15s; }
-		#wpbody-content .tds-welcome-stats a:hover, #wpbody-content .tds-welcome-stats a:focus { border-color: <?php echo esc_attr( $primary ); ?>; box-shadow: 0 6px 18px -10px rgba(15, 120, 150, .5); }
+		#wpbody-content .tds-welcome-stats a:hover, #wpbody-content .tds-welcome-stats a:focus { border-color: <?php echo esc_attr( $primary ); ?>; box-shadow: 0 6px 18px -10px color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 50%, transparent); }
 		.tds-stat-label { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #50575e; }
 		.tds-stat-label .dashicons { width: 16px; height: 16px; font-size: 16px; color: <?php echo esc_attr( $dark ); ?>; }
 		.tds-welcome-stats strong { font-size: 22px; font-weight: 700; line-height: 1.1; color: #1d2327; }
-		#wpbody-content .tds-welcome-stats a.is-alert { border-color: <?php echo esc_attr( $primary ); ?>; background: #f1f9fc; }
+		#wpbody-content .tds-welcome-stats a.is-alert { border-color: <?php echo esc_attr( $primary ); ?>; background: color-mix(in srgb, <?php echo esc_attr( $primary ); ?> 6%, #fff); }
 		#wpbody-content .tds-welcome-stats a.is-warn { border-color: #f0c36d; background: #fff8e8; }
 		.tds-welcome-stats a.is-warn .dashicons { color: #b26200; }
 		.tds-welcome-links { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -219,11 +219,11 @@ add_action( 'admin_head', function () {
 		.tds-welcome-links a:hover { border-color: <?php echo esc_attr( $primary ); ?>; color: <?php echo esc_attr( $dark ); ?>; }
 		@media (max-width: 782px) { .tds-welcome-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; } }
 
-		#dashboard-widgets .postbox { border: 1px solid #e5e9ec; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 10px 24px -18px rgba(15, 120, 150, .35); transition: box-shadow .15s; }
-		#dashboard-widgets .postbox:hover { box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 14px 30px -16px rgba(15, 120, 150, .45); }
-		#dashboard-widgets .postbox-header { border-bottom: 1px solid #eef1f3; background: linear-gradient(180deg, #f7fbfc, #fff); }
-		#dashboard-widgets .postbox-header .hndle { gap: 10px; justify-content: flex-start; font-size: 14px; font-weight: 600; padding: 14px 18px; color: #0b2530; }
-		#dashboard-widgets .postbox-header .hndle::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: <?php echo esc_attr( $primary ); ?>; box-shadow: 0 0 0 4px rgba(46, 184, 220, .18); }
+		#dashboard-widgets .postbox { border: 1px solid #e5e9ec; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 10px 24px -18px color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 35%, transparent); transition: box-shadow .15s; }
+		#dashboard-widgets .postbox:hover { box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 14px 30px -16px color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 45%, transparent); }
+		#dashboard-widgets .postbox-header { border-bottom: 1px solid #eef1f3; background: linear-gradient(180deg, color-mix(in srgb, <?php echo esc_attr( $primary ); ?> 4%, #fff), #fff); }
+		#dashboard-widgets .postbox-header .hndle { gap: 10px; justify-content: flex-start; font-size: 14px; font-weight: 600; padding: 14px 18px; color: #1d2327; }
+		#dashboard-widgets .postbox-header .hndle::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: <?php echo esc_attr( $primary ); ?>; box-shadow: 0 0 0 4px color-mix(in srgb, <?php echo esc_attr( $primary ); ?> 18%, transparent); }
 		#dashboard-widgets .postbox .handle-actions button { color: #a7aaad; }
 		#dashboard-widgets .postbox .handle-actions button:hover .dashicons, #dashboard-widgets .postbox .handle-actions button:hover { color: <?php echo esc_attr( $dark ); ?>; }
 		#dashboard-widgets .postbox .inside { padding: 4px 18px 18px; }
@@ -232,7 +232,7 @@ add_action( 'admin_head', function () {
 
 		#dashboard-widgets ul.wc_status_list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 14px 0 0; border: 0; }
 		#dashboard-widgets ul.wc_status_list li { float: none; width: auto; margin: 0; border: 0 !important; border-radius: 10px; background: #f6f8f9; }
-		#dashboard-widgets ul.wc_status_list li:hover { background: #eef7fa; }
+		#dashboard-widgets ul.wc_status_list li:hover { background: color-mix(in srgb, <?php echo esc_attr( $primary ); ?> 8%, #fff); }
 		#dashboard-widgets ul.wc_status_list li.sales-this-month, #dashboard-widgets ul.wc_status_list li.best-seller-this-month { grid-column: 1 / -1; }
 		#dashboard-widgets ul.wc_status_list li a { padding: 12px 14px 12px 52px; }
 		#dashboard-widgets ul.wc_status_list li a::before { left: 18px; }
@@ -260,13 +260,13 @@ add_action( 'admin_head', function () {
 		#adminmenu li.menu-top:hover div.wp-menu-image img, #adminmenu li.opensub > a.menu-top div.wp-menu-image img { opacity: 1; filter: brightness(0) invert(1); }
 		#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head { background: <?php echo esc_attr( $dark ); ?>; }
 		#adminmenu .wp-submenu a:hover, #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu li.current a, #adminmenu .wp-submenu li.current a:hover { color: <?php echo esc_attr( $primary ); ?>; }
-		#adminmenu .awaiting-mod, #adminmenu .update-plugins { background: <?php echo esc_attr( $primary ); ?>; color: #0b2530; }
+		#adminmenu .awaiting-mod, #adminmenu .update-plugins { background: <?php echo esc_attr( $primary ); ?>; color: #fff; }
 		.wp-core-ui .button-primary { background: <?php echo esc_attr( $dark ); ?>; border-color: <?php echo esc_attr( $dark ); ?>; }
-		.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus { background: #0b5d73; border-color: #0b5d73; }
+		.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus { background: color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 80%, #000); border-color: color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 80%, #000); }
 		.wp-core-ui .button:not(.button-primary), .wp-core-ui .button-secondary { color: <?php echo esc_attr( $dark ); ?>; border-color: <?php echo esc_attr( $dark ); ?>; }
-		.wp-core-ui .button:not(.button-primary):hover { color: #0b5d73; border-color: #0b5d73; background: #f6fbfd; }
+		.wp-core-ui .button:not(.button-primary):hover { color: color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 80%, #000); border-color: color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 80%, #000); background: color-mix(in srgb, <?php echo esc_attr( $primary ); ?> 4%, #fff); }
 		#wpbody-content a:not(.button):not(.page-title-action):not(.nav-tab) { color: <?php echo esc_attr( $dark ); ?>; }
-		#wpbody-content a:not(.button):not(.page-title-action):not(.nav-tab):hover { color: #0b5d73; }
+		#wpbody-content a:not(.button):not(.page-title-action):not(.nav-tab):hover { color: color-mix(in srgb, <?php echo esc_attr( $dark ); ?> 80%, #000); }
 		#wpbody-content .tds-welcome-stats a, #wpbody-content .tds-welcome-links a, #wpbody-content .wc_status_list a { color: #1d2327; text-decoration: none; }
 		#wpbody-content .wc_status_list a strong { color: inherit; }
 		.wrap .page-title-action { color: <?php echo esc_attr( $dark ); ?>; border-color: <?php echo esc_attr( $dark ); ?>; }

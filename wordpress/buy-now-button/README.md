@@ -21,7 +21,7 @@ Edit the array in `tds_buy_now_settings()`:
 |---|---|---|
 | `label` | `Comprar agora` | Button text |
 | `background` | `#1d2327` | Button background colour |
-| `hover_background` | `#0f7896` | Button background colour on hover |
+| `hover_background` | `#135e96` | Button background colour on hover |
 | `color` | `#fff` | Button text colour |
 
 ## How to use
